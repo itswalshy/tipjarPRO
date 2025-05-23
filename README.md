@@ -47,7 +47,7 @@ NODE_ENV=development
 
 4. Start the development server:
 ```bash
-npx tsx server/index-local.ts
+npm run dev:local
 ```
 
 The application will be available at http://localhost:5000
@@ -57,6 +57,15 @@ The application will be available at http://localhost:5000
 - `GEMINI_API_KEY`: Your Google Gemini API key for OCR functionality
 - `NODE_ENV`: Application environment (development/production)
 - `SESSION_SECRET`: Secret key for session management (required in production)
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run dev:local` - Start development server with local settings
+- `npm run build` - Build the application for production
+- `npm run start` - Start the production server
+- `npm run serve` - Serve the built frontend files locally
+- `npm run update-browserslist` - Update browserslist database
 
 ## Contributing
 
