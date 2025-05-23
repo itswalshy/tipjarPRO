@@ -29,25 +29,37 @@ VITE_GEMINI_API_KEY=your_gemini_api_key_here
 
 ## GitHub Pages Deployment
 
-For GitHub Pages deployment, you'll need to set up secrets in your GitHub repository:
+This project uses GitHub Actions for automatic deployment. Here's how it works:
+
+### First-time Setup
 
 1. Go to your GitHub repository
 2. Navigate to Settings > Secrets and variables > Actions
 3. Click "New repository secret"
 4. Add these secrets:
    - Name: `GEMINI_API_KEY` Value: Your Gemini API key
-   - Name: `SESSION_SECRET` Value: A secure random string
+   - Name: `SESSION_SECRET` Value: A secure random string (you can use a password generator)
+5. Go to Settings > Pages
+6. In the "Build and deployment" section:
+   - Set Source to "GitHub Actions"
 
-Then in your workflow file (`.github/workflows/deploy.yml`), add these environment variables:
+### How to Deploy
 
-```yaml
-jobs:
-  build-and-deploy:
-    # ...
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+Simply commit and push your changes to the `main` branch:
+
+```bash
+# Make your changes, then:
+git add .
+git commit -m "Your commit message"
+git push origin main
 ```
+
+The GitHub Action will automatically:
+1. Build your project
+2. Deploy it to GitHub Pages
+3. Show the deployment status in the Actions tab
+
+You can check the status of your deployment in the "Actions" tab of your repository.
 
 ## Security Notes
 

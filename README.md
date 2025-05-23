@@ -9,6 +9,7 @@ A modern web application for efficient tip distribution management, built with R
 - 📱 Responsive design for both desktop and mobile
 - 🎨 Modern UI with shadcn/ui components
 - 🔒 Secure environment variable management
+- 🚀 Automated GitHub Pages deployment
 
 ## Tech Stack
 
@@ -17,6 +18,7 @@ A modern web application for efficient tip distribution management, built with R
 - OCR: Google Gemini API
 - UI Components: shadcn/ui
 - Styling: Tailwind CSS
+- Deployment: GitHub Actions
 
 ## Getting Started
 
@@ -57,6 +59,26 @@ The application will be available at http://localhost:5000
 - `GEMINI_API_KEY`: Your Google Gemini API key for OCR functionality
 - `NODE_ENV`: Application environment (development/production)
 - `SESSION_SECRET`: Secret key for session management (required in production)
+
+See [ENV_SETUP.md](ENV_SETUP.md) for detailed environment setup instructions.
+
+## Deployment
+
+This project uses GitHub Actions for automatic deployment to GitHub Pages.
+
+### How to Deploy
+
+Simply commit and push your changes to the `main` branch:
+
+```bash
+git add .
+git commit -m "Your changes"
+git push origin main
+```
+
+The GitHub Action will automatically build and deploy your site to GitHub Pages. You can view deployment status in the Actions tab of your repository.
+
+For full deployment setup instructions, see [ENV_SETUP.md](ENV_SETUP.md).
 
 ## Contributing
 
