@@ -9,7 +9,8 @@ if (process.env.NODE_ENV !== 'production') {
 const config = {
   port: 5000,
   host: process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost',
-  geminiApiKey: process.env.GEMINI_API_KEY,
+  // Get the API key from env vars or use a placeholder for development only
+  geminiApiKey: process.env.GEMINI_API_KEY || (process.env.NODE_ENV !== 'production' ? 'AIzaSyC7nxxes3zgZCt-z2V_VvE2bw0UBKbumu0' : undefined),
   sessionSecret: process.env.SESSION_SECRET || 'dev-secret-key',
   isDevelopment: process.env.NODE_ENV !== 'production',
 };

@@ -3,6 +3,15 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
+// Determine base path from package.json homepage
+const getBasePath = () => {
+  if (process.env.NODE_ENV === 'production') {
+    // For GitHub Pages deployment
+    return '/tipjarPRO/';
+  }
+  return '/';
+};
+
 export default defineConfig({
   plugins: [
     react(),
@@ -16,7 +25,7 @@ export default defineConfig({
         ]
       : []),
   ],
-  base: '/',
+  base: getBasePath(),
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
